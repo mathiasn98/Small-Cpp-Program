@@ -8,12 +8,14 @@
 #include <string>
 using namespace std;
 class Polinom{
+    //A single polinom
     public:
+        //constructor
         Polinom(float _coeff, float _degree){
             coeff = _coeff;
             degree = _degree;
         }
-        ~Polinom(){}
+        //evaluate a single value of x
         double countFx(double x){
             return (coeff*pow(x,degree));
         }
@@ -47,6 +49,8 @@ class ArrPolinom{
                addPolinom(Polinom(coeff,degree));
            }
         }
+        //print the equation to user
+        //example :
         void printPolinom(){
             int i;
             for(i=0;i<vp.size();i++){
@@ -59,6 +63,7 @@ class ArrPolinom{
         void addPolinom(Polinom P){
             vp.push_back(P);
         }
+        //evaluate the value of a single x in all array polynom element
         double countFx(double x){
             double tempFx = 0.0;
             for(int j=0; j < vp.size();j++){
@@ -66,6 +71,7 @@ class ArrPolinom{
             }
             return tempFx;
         }
+        //Count the value of integral
         double count(float low, float high, int n){
             double tempIntegral = 0.0;
             double dx = (high-low)/(float)n;
